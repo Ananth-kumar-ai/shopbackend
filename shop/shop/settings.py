@@ -17,7 +17,6 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",  # ✅ add this
 ]
-
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",  
     'django.middleware.security.SecurityMiddleware',
@@ -49,13 +48,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'shop.wsgi.application'
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'shop',
+    #     'USER': 'root',
+    #     'PASSWORD': '1234',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'shop',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
